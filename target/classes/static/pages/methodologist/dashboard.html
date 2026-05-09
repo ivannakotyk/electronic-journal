@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Кабінет методиста</title>
+    <link rel="stylesheet" href="/assets/css/kpi-campus.css">
+</head>
+<body>
+<div class="app">
+    <aside class="side">
+        <div class="brand">
+            <div class="mark">KPI</div>
+            <div>
+                <b>Електронний журнал</b><br>
+                <small>Кабінет методиста</small>
+            </div>
+        </div>
+        <div class="user">
+            <b data-name></b><br>
+            <span class="role" data-role></span>
+        </div>
+        <nav class="nav">
+            <a data-active="dashboard" href="/pages/methodologist/dashboard.html">🏠 Головна</a>
+            <a data-active="monitoring" href="/pages/methodologist/monitoring.html">🧭 Моніторинг</a>
+            <a data-active="reports" href="/pages/methodologist/reports.html">📈 Зведені звіти</a>
+            <a href="/pages/shared/profile.html">👤 Профіль</a>
+        </nav>
+        <button class="danger" data-logout>Вийти</button>
+    </aside>
+
+    <main class="main">
+        <div class="top">
+            <div>
+                <h1>Кабінет методиста</h1>
+                <p>Моніторинг журналу, аналіз успішності та зведені звіти.</p>
+            </div>
+        </div>
+        <div class="hero">
+            <h2>Методичний контроль</h2>
+            <p>Методист контролює заповнення журналу викладачами, аналізує успішність і формує зведену звітність.</p>
+            <span class="badge gold">Моніторинг</span>
+            <span class="badge gold">Звіти</span>
+            <span class="badge gold">Експорт</span>
+        </div>
+
+        <section class="section grid cols3">
+            <a class="card module" href="/pages/methodologist/monitoring.html">
+                <div>
+                    <div class="ico">🧭</div>
+                    <h3>Моніторинг</h3>
+                    <p>Перевірка оцінок і заповненості журналу.</p>
+                </div>
+                <span class="badge">Переглянути</span>
+            </a>
+            <a class="card module" href="/pages/methodologist/reports.html">
+                <div>
+                    <div class="ico">📈</div>
+                    <h3>Зведені звіти</h3>
+                    <p>Формування звітності для деканату.</p>
+                </div>
+                <span class="badge">Звіти</span>
+            </a>
+        </section>
+
+        <section class="section grid cols3">
+            <div class="card stat">
+                <div>
+                    <div class="muted">Звітів</div>
+                    <div class="num" id="reports">—</div>
+                </div>
+                <span>📄</span>
+            </div>
+            <div class="card stat">
+                <div>
+                    <div class="muted">Середній бал</div>
+                    <div class="num" id="avg">—</div>
+                </div>
+                <span>📊</span>
+            </div>
+            <div class="card stat">
+                <div>
+                    <div class="muted">Груп</div>
+                    <div class="num" id="groups">—</div>
+                </div>
+                <span>🏷️</span>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/methodologist.js"></script>
+<script>
+    requireAuth(['METHODOLOGIST']);
+    init('dashboard');
+    methodDash();
+</script>
+</body>
+</html>

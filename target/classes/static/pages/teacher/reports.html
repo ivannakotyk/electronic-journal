@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Звіти викладача</title>
+    <link rel="stylesheet" href="/assets/css/kpi-campus.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="side">
+
+        <div class="brand">
+            <div class="mark">KPI</div>
+            <div>
+                <b>Електронний журнал</b><br>
+                <small>Кабінет викладача</small>
+            </div>
+        </div>
+
+        <div class="user">
+            <b data-name></b><br>
+            <span class="role" data-role></span>
+        </div>
+
+        <nav class="nav">
+            <a data-active="dashboard" href="/pages/teacher/dashboard.html">🏠 Головна</a>
+            <a data-active="gradebook" href="/pages/teacher/gradebook.html">📝 Виставлення оцінок</a>
+            <a data-active="schedule" href="/pages/teacher/schedule.html">📅 Розклад</a>
+            <a data-active="reports" href="/pages/teacher/reports.html">📈 Звіти</a>
+            <a href="/pages/shared/profile.html">👤 Профіль</a>
+        </nav>
+
+        <button class="danger" data-logout>Вийти</button>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="top">
+            <div>
+                <h1>Звіти викладача</h1>
+                <p>Формування звіту успішності та експорт у PDF/Excel.</p>
+            </div>
+        </div>
+
+        <section class="grid cols2">
+
+            <div class="card">
+                <h2>Сформувати звіт</h2>
+
+                <form id="reportForm" class="form">
+
+                    <div class="field">
+                        <label>Період</label>
+                        <input
+                                class="input"
+                                name="period"
+                                value="Весняний семестр 2026"
+                                required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label>Група</label>
+                        <select name="groupId" required></select>
+                    </div>
+
+                    <div class="field full">
+                        <label>Дисципліна</label>
+                        <select name="disciplineId"></select>
+                    </div>
+
+                    <button class="btn full">Сформувати</button>
+
+                </form>
+            </div>
+
+            <div class="card visual-card">
+
+                <div class="visual-glow"></div>
+
+                <div class="visual-glow glow2"></div>
+
+                <img
+                        src="/assets/illustrations/girl on graduation-rafiki.png"
+                        alt="Education illustration"
+                        class="visual-illustration"
+                >
+
+            </div>
+
+        </section>
+
+        <section class="section card">
+
+            <h2>Звіти</h2>
+
+            <div class="table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Період</th>
+                        <th>Група</th>
+                        <th>Дисципліна</th>
+                        <th>Експорт</th>
+                    </tr>
+                    </thead>
+                    <tbody id="reports"></tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+<div id="toast" class="toast"></div>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/teacher.js"></script>
+
+<script>
+    requireAuth(['TEACHER']);
+    init('reports');
+    reports();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Кабінет викладача</title>
+    <link rel="stylesheet" href="/assets/css/kpi-campus.css">
+</head>
+<body>
+<div class="app">
+    <aside class="side">
+        <div class="brand">
+            <div class="mark">KPI</div>
+            <div>
+                <b>Електронний журнал</b><br>
+                <small>Кабінет викладача</small>
+            </div>
+        </div>
+        <div class="user">
+            <b data-name></b><br>
+            <span class="role" data-role></span>
+        </div>
+        <nav class="nav">
+            <a data-active="dashboard" href="/pages/teacher/dashboard.html">🏠 Головна</a>
+            <a data-active="gradebook" href="/pages/teacher/gradebook.html">📝 Виставлення оцінок</a>
+            <a data-active="schedule" href="/pages/teacher/schedule.html">📅 Розклад</a>
+            <a data-active="reports" href="/pages/teacher/reports.html">📈 Звіти</a>
+            <a href="/pages/shared/profile.html">👤 Профіль</a>
+        </nav>
+        <button class="danger" data-logout>Вийти</button>
+    </aside>
+
+    <main class="main">
+        <div class="top">
+            <div>
+                <h1>Кабінет викладача</h1>
+            </div>
+        </div>
+        <div class="hero">
+            <h2>Викладацький журнал</h2>
+            <p>
+                Єдиний центр взаємодії з навчальними даними: оцінювання,
+                розклад та аналітика успішності студентів в реальному часі.
+            </p>
+            <span class="badge gold">Внесення оцінок</span>
+            <span class="badge gold">Звіти</span>
+        </div>
+
+        <section class="section grid cols3">
+            <a class="card module" href="/pages/teacher/gradebook.html">
+                <div>
+                    <div class="ico">📝</div>
+                    <h3>Виставлення оцінок</h3>
+                    <p>Форма додавання оцінки студенту з коментарем.</p>
+                </div>
+                <span class="badge">Перейти</span>
+            </a>
+            <a class="card module" href="/pages/teacher/schedule.html">
+                <div>
+                    <div class="ico">📅</div>
+                    <h3>Розклад</h3>
+                    <p>Перегляд занять та сесії за групами.</p>
+                </div>
+                <span class="badge">Розклад</span>
+            </a>
+            <a class="card module" href="/pages/teacher/reports.html">
+                <div>
+                    <div class="ico">📈</div>
+                    <h3>Звіти</h3>
+                    <p>Формування звіту успішності й експорт.</p>
+                </div>
+                <span class="badge">Звіти</span>
+            </a>
+        </section>
+
+        <section class="section card">
+            <h2>Останні оцінки</h2>
+            <div class="table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Студент</th>
+                        <th>Дисципліна</th>
+                        <th>Оцінка</th>
+                        <th>Дата</th>
+                        <th>Тип</th>
+                    </tr>
+                    </thead>
+                    <tbody id="recent"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/teacher.js"></script>
+<script>
+    requireAuth(['TEACHER']);
+    init('dashboard');
+    teacherDash();
+</script>
+</body>
+</html>

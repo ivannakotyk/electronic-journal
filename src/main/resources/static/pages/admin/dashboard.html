@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Кабінет адміністратора</title>
+    <link rel="stylesheet" href="/assets/css/kpi-campus.css">
+</head>
+<body>
+<div class="app">
+    <aside class="side">
+        <div class="brand">
+            <div class="mark">KPI</div>
+            <div>
+                <b>Електронний журнал</b><br>
+                <small>Адміністратор</small>
+            </div>
+        </div>
+        <div class="user">
+            <b data-name></b><br>
+            <span class="role" data-role></span>
+        </div>
+        <nav class="nav">
+            <a data-active="dashboard" href="/pages/admin/dashboard.html">🏠 Головна</a>
+            <a data-active="users" href="/pages/admin/users.html">👥 Користувачі</a>
+            <a data-active="groups" href="/pages/admin/groups.html">🏷️ Групи</a>
+            <a data-active="disciplines" href="/pages/admin/disciplines.html">📚 Дисципліни</a>
+            <a href="/pages/shared/profile.html">👤 Профіль</a>
+        </nav>
+        <button class="danger" data-logout>Вийти</button>
+    </aside>
+
+    <main class="main">
+        <div class="top">
+            <div>
+                <h1>Кабінет адміністратора</h1>
+            </div>
+        </div>
+        <div class="hero">
+            <h2>Адміністративне керування</h2>
+            <p>
+                Ви працюєте в адміністративному модулі системи «Електронний кампус».
+                Тут здійснюється керування користувачами, структурою навчального процесу
+                та основними довідковими даними платформи.
+            </p>
+            <span class="badge gold">Користувачі</span>
+            <span class="badge gold">Групи</span>
+            <span class="badge gold">Дисципліни</span>
+        </div>
+
+        <section class="section grid cols3">
+            <a class="card module" href="/pages/admin/users.html">
+                <div>
+                    <div class="ico">👥</div>
+                    <h3>Користувачі</h3>
+                    <p>Створення, видалення та призначення ролей.</p>
+                </div>
+                <span class="badge">Керувати</span>
+            </a>
+            <a class="card module" href="/pages/admin/groups.html">
+                <div>
+                    <div class="ico">🏷️</div>
+                    <h3>Групи</h3>
+                    <p>Академічні групи, курс і спеціальність.</p>
+                </div>
+                <span class="badge">Відкрити</span>
+            </a>
+            <a class="card module" href="/pages/admin/disciplines.html">
+                <div>
+                    <div class="ico">📚</div>
+                    <h3>Дисципліни</h3>
+                    <p>Назви дисциплін і семестри.</p>
+                </div>
+                <span class="badge">Відкрити</span>
+            </a>
+        </section>
+
+        <section class="section grid cols4">
+            <div class="card stat">
+                <div>
+                    <div class="muted">Користувачі</div>
+                    <div class="num" id="users">—</div>
+                </div>
+                <span>👥</span>
+            </div>
+            <div class="card stat">
+                <div>
+                    <div class="muted">Студенти</div>
+                    <div class="num" id="students">—</div>
+                </div>
+                <span>🎓</span>
+            </div>
+            <div class="card stat">
+                <div>
+                    <div class="muted">Групи</div>
+                    <div class="num" id="groups">—</div>
+                </div>
+                <span>🏷️</span>
+            </div>
+            <div class="card stat">
+                <div>
+                    <div class="muted">Дисципліни</div>
+                    <div class="num" id="disc">—</div>
+                </div>
+                <span>📚</span>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/admin.js"></script>
+<script>
+    requireAuth(['ADMINISTRATOR']);
+    init('dashboard');
+    adminDash();
+</script>
+</body>
+</html>

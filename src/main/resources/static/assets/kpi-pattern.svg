@@ -1,0 +1,49 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="800"
+        height="600"
+        viewBox="0 0 800 600"
+>
+
+    <rect
+            width="800"
+            height="600"
+            fill="#0b2e59"
+    />
+
+    <g
+            fill="none"
+            stroke="#f0b323"
+            stroke-opacity=".18"
+            stroke-width="2"
+    >
+
+        <circle
+                cx="120"
+                cy="90"
+                r="60"
+        />
+
+        <circle
+                cx="640"
+                cy="140"
+                r="90"
+        />
+
+        <circle
+                cx="410"
+                cy="420"
+                r="140"
+        />
+
+        <path
+                d="
+                M0 520
+                C160 450 250 560 390 500
+                S610 330 800 390
+            "
+        />
+
+    </g>
+
+</svg>

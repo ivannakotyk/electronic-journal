@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Кабінет студента</title>
+    <link rel="stylesheet" href="/assets/css/kpi-campus.css">
+</head>
+<body>
+<div class="app">
+    <aside class="side">
+        <div class="brand">
+            <div class="mark">KPI</div>
+            <div>
+                <b>Електронний журнал</b><br>
+                <small>Кабінет студента</small>
+            </div>
+        </div>
+        <div class="user">
+            <b data-name></b><br>
+            <span class="role" data-role></span>
+        </div>
+        <nav class="nav">
+            <a data-active="dashboard" href="/pages/student/dashboard.html">🏠 Головна</a>
+            <a data-active="grades" href="/pages/student/grades.html">📊 Мої оцінки</a>
+            <a data-active="schedule" href="/pages/student/schedule.html">📅 Розклад</a>
+            <a href="/pages/shared/profile.html">👤 Профіль</a>
+        </nav>
+        <button class="danger" data-logout>Вийти</button>
+    </aside>
+
+    <main class="main">
+        <div class="top">
+            <div>
+                <h1>Кабінет студента</h1>
+            </div>
+            <a class="btn2" href="/pages/shared/help.html">Довідка</a>
+        </div>
+
+        <div class="hero">
+            <h2>Вітаємо, <span data-name></span>!</h2>
+            <p>
+                Єдиний простір для доступу до навчальної інформації:
+                оцінок, розкладу та результатів успішності.
+                Усі ключові дані зібрані в одному місці для зручного перегляду.
+            </p>
+            <span class="badge gold">Без редагування</span>
+        </div>
+
+        <section class="section grid cols3">
+            <a class="card module" href="/pages/student/grades.html">
+                <div>
+                    <div class="ico">📊</div>
+                    <h3>Мої оцінки</h3>
+                    <p>Поточний і семестровий контроль, коментарі, середній бал.</p>
+                </div>
+                <span class="badge">Відкрити</span>
+            </a>
+            <a class="card module" href="/pages/student/schedule.html">
+                <div>
+                    <div class="ico">📅</div>
+                    <h3>Розклад</h3>
+                    <p>Розклад занять і сесії академічної групи.</p>
+                </div>
+                <span class="badge">Переглянути</span>
+            </a>
+            <a class="card module" href="/pages/shared/profile.html">
+                <div>
+                    <div class="ico">👤</div>
+                    <h3>Профіль</h3>
+                    <p>Основні дані користувача і роль у системі.</p>
+                </div>
+                <span class="badge">Профіль</span>
+            </a>
+        </section>
+
+        <section class="section grid cols3">
+            <div class="card stat">
+                <div>
+                    <div class="muted">Середній бал семестрового контролю</div>
+                    <div class="num" id="avg">—</div>
+                </div>
+                <span>🎓</span>
+            </div>
+            <div class="card stat">
+                <div>
+                    <div class="muted">Поточних оцінок</div>
+                    <div class="num" id="cur">—</div>
+                </div>
+                <span>🧾</span>
+            </div>
+            <div class="card stat">
+                <div>
+                    <div class="muted">Семестрових</div>
+                    <div class="num" id="sem">—</div>
+                </div>
+                <span>🏁</span>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/student.js"></script>
+<script>
+    requireAuth(['STUDENT']);
+    init('dashboard');
+    loadStudentDash();
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Виставлення оцінок</title>
+    <link rel="stylesheet" href="/assets/css/kpi-campus.css">
+</head>
+<body>
+<div class="app">
+    <aside class="side">
+        <div class="brand">
+            <div class="mark">KPI</div>
+            <div>
+                <b>Електронний журнал</b><br>
+                <small>Кабінет викладача</small>
+            </div>
+        </div>
+        <div class="user">
+            <b data-name></b><br>
+            <span class="role" data-role></span>
+        </div>
+        <nav class="nav">
+            <a data-active="dashboard" href="/pages/teacher/dashboard.html">🏠 Головна</a>
+            <a data-active="gradebook" href="/pages/teacher/gradebook.html">📝 Виставлення оцінок</a>
+            <a data-active="schedule" href="/pages/teacher/schedule.html">📅 Розклад</a>
+            <a data-active="reports" href="/pages/teacher/reports.html">📈 Звіти</a>
+            <a href="/pages/shared/profile.html">👤 Профіль</a>
+        </nav>
+        <button class="danger" data-logout>Вийти</button>
+    </aside>
+
+    <main class="main">
+        <div class="top">
+            <div>
+                <h1>Виставлення оцінок</h1>
+                <p>Основна сторінка викладача для роботи з журналом успішності.</p>
+            </div>
+        </div>
+
+        <section class="grid cols2">
+            <div class="card">
+                <h2>Додати оцінку</h2>
+                <form id="gradeForm" class="form">
+                    <div class="field">
+                        <label>Студент</label>
+                        <select name="studentId" required></select>
+                    </div>
+                    <div class="field">
+                        <label>Дисципліна</label>
+                        <select name="disciplineId" required></select>
+                    </div>
+                    <div class="field">
+                        <label>Тип контролю</label>
+                        <select name="controlType">
+                            <option value="CURRENT">Поточний</option>
+                            <option value="SEMESTER">Семестровий</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Дата</label>
+                        <input class="input" name="gradeDate" type="date" required>
+                    </div>
+                    <div class="field">
+                        <label>Оцінка</label>
+                        <input class="input" name="value" type="number" min="0" max="100" step="0.1" required>
+                    </div>
+                    <div class="field full">
+                        <label>Коментар</label>
+                        <textarea name="comment" rows="3"></textarea>
+                    </div>
+                    <button class="btn full">Зберегти оцінку</button>
+                </form>
+            </div>
+
+            <div class="card visual-card">
+                <div class="visual-glow"></div>
+                <div class="visual-glow glow2"></div>
+                <img
+                        src="/assets/illustrations/girl on graduation-rafiki.png"
+                        alt="Education illustration"
+                        class="visual-illustration"
+                >
+            </div>
+        </section>
+
+        <section class="section card">
+            <h2>Журнал оцінок</h2>
+            <div class="table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Студент</th>
+                        <th>Дисципліна</th>
+                        <th>Тип</th>
+                        <th>Оцінка</th>
+                        <th>Дата</th>
+                        <th>Коментар</th>
+                    </tr>
+                    </thead>
+                    <tbody id="gradeRows"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/teacher.js"></script>
+<script>
+    requireAuth(['TEACHER']);
+    init('gradebook');
+    gradebook();
+</script>
+</body>
+</html>

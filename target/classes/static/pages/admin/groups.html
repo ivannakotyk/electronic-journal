@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Групи</title>
+
+    <link rel="stylesheet" href="/assets/css/kpi-campus.css">
+</head>
+
+<body>
+<div class="app">
+
+    <aside class="side">
+        <div class="brand">
+            <div class="mark">KPI</div>
+
+            <div>
+                <b>Електронний журнал</b><br>
+                <small>Адміністратор</small>
+            </div>
+        </div>
+
+        <div class="user">
+            <b data-name></b><br>
+            <span class="role" data-role></span>
+        </div>
+
+        <nav class="nav">
+            <a data-active="dashboard" href="/pages/admin/dashboard.html">🏠 Головна</a>
+            <a data-active="users" href="/pages/admin/users.html">👥 Користувачі</a>
+            <a data-active="groups" href="/pages/admin/groups.html">🏷️ Групи</a>
+            <a data-active="disciplines" href="/pages/admin/disciplines.html">📚 Дисципліни</a>
+            <a href="/pages/shared/profile.html">👤 Профіль</a>
+        </nav>
+
+        <button class="danger" data-logout>Вийти</button>
+    </aside>
+
+    <main class="main">
+
+        <div class="top">
+            <div>
+                <h1>Керування групами</h1>
+                <p>Формування академічних груп.</p>
+            </div>
+        </div>
+
+        <section class="grid cols2">
+
+            <div class="card">
+                <h2>Додати групу</h2>
+
+                <form id="groupForm" class="form">
+                    <div class="field">
+                        <label>Код</label>
+                        <input class="input" name="code" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Курс</label>
+                        <input class="input" type="number" name="course" min="1" required>
+                    </div>
+
+                    <div class="field full">
+                        <label>Спеціальність</label>
+                        <input class="input" name="specialty" required>
+                    </div>
+
+                    <button class="btn full">Зберегти</button>
+                </form>
+            </div>
+
+            <div class="card visual-card">
+                <div class="visual-glow"></div>
+                <div class="visual-glow glow2"></div>
+
+                <img
+                        src="/assets/illustrations/graduation hats-rafiki.png"
+                        alt="Groups illustration"
+                        class="visual-illustration"
+                >
+            </div>
+
+        </section>
+
+        <section class="section card">
+            <h2>Групи</h2>
+
+            <div class="table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Код</th>
+                        <th>Курс</th>
+                        <th>Спеціальність</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="groupRows"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/admin.js"></script>
+
+<script>
+    requireAuth(['ADMINISTRATOR']);
+    init('groups');
+    groupsPage();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Розклад студента</title>
+    <link rel="stylesheet" href="/assets/css/kpi-campus.css">
+</head>
+
+<body>
+<div class="app">
+
+    <aside class="side">
+        <div class="brand">
+            <div class="mark">KPI</div>
+            <div>
+                <b>Електронний журнал</b><br>
+                <small>Кабінет студента</small>
+            </div>
+        </div>
+
+        <div class="user">
+            <b data-name></b><br>
+            <span class="role" data-role></span>
+        </div>
+
+        <nav class="nav">
+            <a data-active="dashboard" href="/pages/student/dashboard.html">🏠 Головна</a>
+            <a data-active="grades" href="/pages/student/grades.html">📊 Мої оцінки</a>
+            <a data-active="schedule" href="/pages/student/schedule.html">📅 Розклад</a>
+            <a href="/pages/shared/profile.html">👤 Профіль</a>
+        </nav>
+
+        <button class="danger" data-logout>Вийти</button>
+    </aside>
+
+    <main class="main schedule-page">
+
+        <div class="top">
+            <div>
+                <h1>Мій розклад</h1>
+                <p>Розклад занять та сесії за групою студента.</p>
+            </div>
+        </div>
+
+        <section class="card">
+
+            <div class="toolbar schedule-toolbar">
+                <h2 id="stype">Розклад</h2>
+
+                <div class="filters">
+
+                    <div class="btn-group">
+                        <button class="btn2 active" data-type="classes">Заняття</button>
+                        <button class="btn2" data-type="session">Сесія</button>
+                    </div>
+
+                    <div id="weekToggle" class="btn-group">
+                        <span style="margin: 0 10px; color:#94a3b8;">|</span>
+                        <button class="btn2 active" data-week="1">1 тиждень</button>
+                        <button class="btn2" data-week="2">2 тиждень</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="schedule" class="schedule-table"></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/student.js"></script>
+
+<script>
+    requireAuth(['STUDENT']);
+    init('schedule');
+    loadStudentSchedule();
+</script>
+
+</body>
+</html>
+``
