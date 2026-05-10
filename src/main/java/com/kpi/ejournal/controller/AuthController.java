@@ -1,6 +1,7 @@
 package com.kpi.ejournal.controller;
 
-import com.kpi.ejournal.dto.*;
+import com.kpi.ejournal.dto.auth.AuthResponse;
+import com.kpi.ejournal.dto.auth.LoginRequest;
 import com.kpi.ejournal.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;

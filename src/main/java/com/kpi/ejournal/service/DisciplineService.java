@@ -1,8 +1,9 @@
 package com.kpi.ejournal.service;
 
-import com.kpi.ejournal.dto.*;
-import com.kpi.ejournal.entity.Discipline;
-import com.kpi.ejournal.repository.DisciplineRepository;
+import com.kpi.ejournal.dto.discipline.CreateDisciplineRequest;
+import com.kpi.ejournal.dto.discipline.DisciplineResponse;
+import com.kpi.ejournal.entity.academic.Discipline;
+import com.kpi.ejournal.repository.academic.DisciplineRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

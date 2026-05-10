@@ -1,7 +1,19 @@
 package com.kpi.ejournal.service;
 
-import com.kpi.ejournal.dto.*;
-import com.kpi.ejournal.entity.*;
+import com.kpi.ejournal.dto.discipline.DisciplineResponse;
+import com.kpi.ejournal.dto.grade.GradeResponse;
+import com.kpi.ejournal.dto.group.GroupResponse;
+import com.kpi.ejournal.dto.report.ReportResponse;
+import com.kpi.ejournal.dto.schedule.ScheduleItemResponse;
+import com.kpi.ejournal.dto.user.UserResponse;
+import com.kpi.ejournal.entity.academic.Discipline;
+import com.kpi.ejournal.entity.academic.Grade;
+import com.kpi.ejournal.entity.academic.GroupEntity;
+import com.kpi.ejournal.entity.report.Report;
+import com.kpi.ejournal.entity.schedule.ScheduleItem;
+import com.kpi.ejournal.entity.user.Student;
+import com.kpi.ejournal.entity.user.Teacher;
+import com.kpi.ejournal.entity.user.User;
 import org.springframework.stereotype.Service;
 @Service
 public class MapperService {

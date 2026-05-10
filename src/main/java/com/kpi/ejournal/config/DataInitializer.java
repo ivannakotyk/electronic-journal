@@ -1,14 +1,26 @@
 package com.kpi.ejournal.config;
 
-import com.kpi.ejournal.entity.*;
-import com.kpi.ejournal.repository.*;
+import com.kpi.ejournal.entity.academic.ControlType;
+import com.kpi.ejournal.entity.academic.Discipline;
+import com.kpi.ejournal.entity.academic.Grade;
+import com.kpi.ejournal.entity.academic.GroupEntity;
+import com.kpi.ejournal.entity.user.Administrator;
+import com.kpi.ejournal.entity.user.Student;
+import com.kpi.ejournal.entity.user.Teacher;
+import com.kpi.ejournal.entity.user.UserRole;
+import com.kpi.ejournal.repository.academic.DisciplineRepository;
+import com.kpi.ejournal.repository.academic.GradeRepository;
+import com.kpi.ejournal.repository.academic.GroupRepository;
+import com.kpi.ejournal.repository.schedule.ScheduleRepository;
+import com.kpi.ejournal.repository.user.StudentRepository;
+import com.kpi.ejournal.repository.user.TeacherRepository;
+import com.kpi.ejournal.repository.user.UserRepository;
 import com.kpi.ejournal.service.AuthService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Configuration
 public class DataInitializer {

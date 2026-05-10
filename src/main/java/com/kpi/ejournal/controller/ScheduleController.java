@@ -1,7 +1,7 @@
 package com.kpi.ejournal.controller;
 
-import com.kpi.ejournal.dto.ScheduleItemResponse;
-import com.kpi.ejournal.dto.WeeklyScheduleResponse;
+import com.kpi.ejournal.dto.schedule.ScheduleItemResponse;
+import com.kpi.ejournal.dto.schedule.WeeklyScheduleResponse;
 import com.kpi.ejournal.service.ScheduleService;
 import org.springframework.web.bind.annotation.*;
 

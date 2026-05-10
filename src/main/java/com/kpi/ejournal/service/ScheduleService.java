@@ -1,11 +1,12 @@
 package com.kpi.ejournal.service;
 
-import com.kpi.ejournal.dto.*;
+import com.kpi.ejournal.dto.schedule.DayScheduleDTO;
+import com.kpi.ejournal.dto.schedule.ScheduleItemResponse;
+import com.kpi.ejournal.dto.schedule.WeeklyScheduleResponse;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

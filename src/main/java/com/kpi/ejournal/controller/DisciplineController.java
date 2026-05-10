@@ -1,6 +1,7 @@
 package com.kpi.ejournal.controller;
 
-import com.kpi.ejournal.dto.*;
+import com.kpi.ejournal.dto.discipline.CreateDisciplineRequest;
+import com.kpi.ejournal.dto.discipline.DisciplineResponse;
 import com.kpi.ejournal.service.DisciplineService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;

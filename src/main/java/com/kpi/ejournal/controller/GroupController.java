@@ -1,6 +1,7 @@
 package com.kpi.ejournal.controller;
 
-import com.kpi.ejournal.dto.*;
+import com.kpi.ejournal.dto.group.CreateGroupRequest;
+import com.kpi.ejournal.dto.group.GroupResponse;
 import com.kpi.ejournal.service.GroupService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;

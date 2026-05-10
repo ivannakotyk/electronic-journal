@@ -1,8 +1,8 @@
 package com.kpi.ejournal.controller;
 
-import com.kpi.ejournal.dto.GenerateReportRequest;
-import com.kpi.ejournal.dto.ReportDetailsResponse;
-import com.kpi.ejournal.dto.ReportResponse;
+import com.kpi.ejournal.dto.report.GenerateReportRequest;
+import com.kpi.ejournal.dto.report.ReportDetailsResponse;
+import com.kpi.ejournal.dto.report.ReportResponse;
 import com.kpi.ejournal.service.ReportService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpHeaders;

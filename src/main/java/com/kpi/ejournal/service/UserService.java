@@ -1,9 +1,13 @@
 package com.kpi.ejournal.service;
 
-import com.kpi.ejournal.dto.*;
-import com.kpi.ejournal.entity.*;
+import com.kpi.ejournal.dto.user.CreateUserRequest;
+import com.kpi.ejournal.dto.user.UpdateUserRequest;
+import com.kpi.ejournal.dto.user.UserResponse;
+import com.kpi.ejournal.entity.academic.GroupEntity;
+import com.kpi.ejournal.entity.user.*;
 import com.kpi.ejournal.exception.*;
-import com.kpi.ejournal.repository.*;
+import com.kpi.ejournal.repository.academic.GroupRepository;
+import com.kpi.ejournal.repository.user.UserRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.jdbc.core.JdbcTemplate;

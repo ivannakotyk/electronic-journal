@@ -1,6 +1,9 @@
 package com.kpi.ejournal.controller;
 
-import com.kpi.ejournal.dto.*;
+import com.kpi.ejournal.dto.grade.AverageResponse;
+import com.kpi.ejournal.dto.grade.CreateGradeRequest;
+import com.kpi.ejournal.dto.grade.CurrentControlSummaryResponse;
+import com.kpi.ejournal.dto.grade.GradeResponse;
 import com.kpi.ejournal.service.GradeService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;

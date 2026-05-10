@@ -1,9 +1,19 @@
 package com.kpi.ejournal.service;
 
-import com.kpi.ejournal.dto.*;
-import com.kpi.ejournal.entity.*;
+import com.kpi.ejournal.dto.grade.AverageResponse;
+import com.kpi.ejournal.dto.grade.CreateGradeRequest;
+import com.kpi.ejournal.dto.grade.CurrentControlSummaryResponse;
+import com.kpi.ejournal.dto.grade.GradeResponse;
+import com.kpi.ejournal.entity.academic.ControlType;
+import com.kpi.ejournal.entity.academic.Discipline;
+import com.kpi.ejournal.entity.academic.Grade;
+import com.kpi.ejournal.entity.user.Student;
+import com.kpi.ejournal.entity.user.Teacher;
 import com.kpi.ejournal.exception.NotFoundException;
-import com.kpi.ejournal.repository.*;
+import com.kpi.ejournal.repository.academic.DisciplineRepository;
+import com.kpi.ejournal.repository.academic.GradeRepository;
+import com.kpi.ejournal.repository.user.StudentRepository;
+import com.kpi.ejournal.repository.user.TeacherRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;

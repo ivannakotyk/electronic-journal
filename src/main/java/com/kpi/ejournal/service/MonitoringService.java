@@ -1,8 +1,20 @@
 package com.kpi.ejournal.service;
 
-import com.kpi.ejournal.dto.*;
-import com.kpi.ejournal.entity.*;
-import com.kpi.ejournal.repository.*;
+import com.kpi.ejournal.dto.monitoring.MonitoringAuditResponse;
+import com.kpi.ejournal.dto.monitoring.TeacherMonitoringDetailResponse;
+import com.kpi.ejournal.dto.monitoring.TeacherMonitoringResponse;
+import com.kpi.ejournal.dto.monitoring.TeacherMonitoringSummaryResponse;
+import com.kpi.ejournal.entity.academic.ControlType;
+import com.kpi.ejournal.entity.academic.Discipline;
+import com.kpi.ejournal.entity.academic.Grade;
+import com.kpi.ejournal.entity.academic.GroupEntity;
+import com.kpi.ejournal.entity.schedule.ScheduleItem;
+import com.kpi.ejournal.entity.schedule.ScheduleType;
+import com.kpi.ejournal.entity.user.Teacher;
+import com.kpi.ejournal.repository.academic.GradeRepository;
+import com.kpi.ejournal.repository.academic.TeachingAssignmentRepository;
+import com.kpi.ejournal.repository.schedule.ScheduleRepository;
+import com.kpi.ejournal.repository.user.TeacherRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

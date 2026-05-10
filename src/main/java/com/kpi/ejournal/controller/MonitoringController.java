@@ -1,7 +1,7 @@
 package com.kpi.ejournal.controller;
 
-import com.kpi.ejournal.dto.MonitoringAuditResponse;
-import com.kpi.ejournal.dto.TeacherMonitoringSummaryResponse;
+import com.kpi.ejournal.dto.monitoring.MonitoringAuditResponse;
+import com.kpi.ejournal.dto.monitoring.TeacherMonitoringSummaryResponse;
 import com.kpi.ejournal.service.MonitoringService;
 import org.springframework.web.bind.annotation.*;
 

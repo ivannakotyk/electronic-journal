@@ -1,9 +1,10 @@
 package com.kpi.ejournal.service;
 
-import com.kpi.ejournal.dto.*;
-import com.kpi.ejournal.entity.GroupEntity;
+import com.kpi.ejournal.dto.group.CreateGroupRequest;
+import com.kpi.ejournal.dto.group.GroupResponse;
+import com.kpi.ejournal.entity.academic.GroupEntity;
 import com.kpi.ejournal.exception.BadRequestException;
-import com.kpi.ejournal.repository.GroupRepository;
+import com.kpi.ejournal.repository.academic.GroupRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

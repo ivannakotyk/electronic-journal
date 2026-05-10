@@ -1,9 +1,10 @@
 package com.kpi.ejournal.service;
 
-import com.kpi.ejournal.dto.*;
-import com.kpi.ejournal.entity.User;
+import com.kpi.ejournal.dto.auth.AuthResponse;
+import com.kpi.ejournal.dto.auth.LoginRequest;
+import com.kpi.ejournal.entity.user.User;
 import com.kpi.ejournal.exception.BadRequestException;
-import com.kpi.ejournal.repository.UserRepository;
+import com.kpi.ejournal.repository.user.UserRepository;
 import com.kpi.ejournal.security.JwtService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
